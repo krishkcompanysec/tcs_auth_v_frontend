@@ -47,22 +47,22 @@ function Adm_Login(){
     const classes = useStyles();
     const navigate = useNavigate();
     async function spo(values){
-        console.log(values)
+        //console.log(values)
         await axios.post(`https://safe-basin-97450.herokuapp.com/admin/login`,values).then(function (response) {
-                console.log(response);
-                console.log(response.status);
+                //console.log(response);
+                //console.log(response.status);
                 if(response.status===200){
-                     console.log("sucess");
-                     console.log(response);
+                    // console.log("sucess");
+                    // console.log(response);
                     sessionStorage.removeItem('token');
          sessionStorage.setItem('adm_token',response.data.token);
                      navigate('/adm');
                 }
               })
-        .catch((error) => {console.log(error.response.status)
+        .catch((error) => {//console.log(error.response.status)
                            if(error.response.status===400){
-                                     console.log("response");
-                                     console.log(error.response.data);
+                                     //console.log("response");
+                                     //console.log(error.response.data);
                                alert(error.response.data);
 
             }})
@@ -95,7 +95,9 @@ function Adm_Login(){
     return(
    <>
     <div className={classes.container}>
-            <button onClick={()=>console.log("Admin")} id="adml">Admin</button>
+            <button onClick={()=>{
+        //console.log("Admin")
+    }} id="adml">Admin</button>
        <center> <h1>Welcome to Auth-V</h1> </center>
      <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="sm">

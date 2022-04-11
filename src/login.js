@@ -75,25 +75,25 @@ check_session()
     }
     
     async function spo(values){
-        console.log("values")
-        console.log(values)
+       // console.log("values")
+       // console.log(values)
         await axios.post(`https://safe-basin-97450.herokuapp.com/login`,values).then((response)=>{
-                console.log("response");
-                console.log(response);
-                console.log(response.status);
+              //  console.log("response");
+              //  console.log(response);
+               // console.log(response.status);
                 if(response.status===200){
-                     console.log("sucess");
-                     console.log(response);
+                  //   console.log("sucess");
+                  //   console.log(response);
                     sessionStorage.removeItem('adm_token')
                     sessionStorage.setItem('token', response.data.token);
                      navigate('/validator');
                 }
            
               })
-        .catch((error) => {console.log(error.response.status)
+        .catch((error) => {//console.log(error.response.status)
                            if(error.response.status===400){
-                                     console.log("response");
-                                     console.log(error.response.data);
+                                     //console.log("response");
+                                     //console.log(error.response.data);
                                alert(error.response.data);
 
             }});

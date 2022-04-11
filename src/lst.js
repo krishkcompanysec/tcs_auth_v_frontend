@@ -27,15 +27,15 @@ function Lst(){
             
             c.push(res.data[l])
         }   
-     }console.log("c")
+     }//console.log("c")
          setLst({data:c})
-     console.log(c)
+     //console.log(c)
      }
      
      async function tog_sec(email,status){
-        console.log(email)
+        //console.log(email)
         await axios.post(`https://safe-basin-97450.herokuapp.com/toggle`,{email,status}).then((res)=>{
-            console.log(res)
+            //console.log(res)
             window.location.reload();
         })
     }
@@ -67,23 +67,23 @@ function Seclst(){
         if(ressec.data[l].status==0){
            
             d.push(ressec.data[l])
-        }}console.log("d")
-        console.log(d)
+        }}//console.log("d")
+        //console.log(d)
         
         setSeclst({data:d})
     }
     
     async function tog_sec(email,status){
-        console.log(email)
+        //console.log(email)
         await axios.post(`https://safe-basin-97450.herokuapp.com/toggle`,{email,status}).then((res)=>{
-            console.log(res)
+            //console.log(res)
             window.location.reload();
         })
     }
     async function del(email){
-        console.log(email)
+        //console.log(email)
         await axios.post(`https://safe-basin-97450.herokuapp.com/toggle/delete`,{email}).then((res)=>{
-            console.log(res)
+            //console.log(res)
             window.location.reload();
         })
         
@@ -111,13 +111,13 @@ function Thrlst(){
      const [stThrlst,setThrlst]=useState({data:[]})
      
      async function fetchthrlst(){
-         console.log("3rd fn")
+         //console.log("3rd fn")
      const resthr = await axios.get(`https://safe-basin-97450.herokuapp.com/admin/sessions`);
          
          
          
       setThrlst({data:resthr.data})
-         console.log(resthr.data)
+         //console.log(resthr.data)
     }
      
      var z = stThrlst.data.map((e)=><ul  className="tab" key={e._id}><div className="cell">{e.session.email}</div><div className="idcell">{e._id}</div><br/></ul>

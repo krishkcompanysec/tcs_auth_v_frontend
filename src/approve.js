@@ -16,13 +16,14 @@ function Approve(){
             
             c.push(res.data[l])
         }   
-     }console.log("c")
+     }//console.log("c")
          setLst({data:c})
-     console.log(c)
+     //console.log(c)
      }
     
     return(
-        <div className="users" id="apr"  onClick={()=>console.log("Clicked")}>
+        <div className="users" id="apr"  onClick={()=>{//console.log("Clicked")
+                                                      }}>
             <h1>Approve</h1>
             <br/>
             <h1>{stLst.data.length}</h1>

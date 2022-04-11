@@ -14,12 +14,13 @@ function Users(){
             
             c.push(res.data[l])
         }   
-     }console.log("c users")
+     }//console.log("c users")
          setLst({data:c})
-     console.log(c)
+     //console.log(c)
      }
     return(
-        <div className="users" id="usr" onClick={()=>console.log("Clicked")}>
+        <div className="users" id="usr" onClick={()=>{//console.log("Clicked")
+    }}>
             <h1>Users</h1>
             <br/>
             <h1>{stLst.data.length}</h1>

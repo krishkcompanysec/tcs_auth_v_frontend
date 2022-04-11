@@ -93,7 +93,8 @@ check_session()
       
         setFormUpload(true)
         axios.post(baseurl,excelData)
-        .then(res=>console.log(res))
+        .then(res=>{//console.log(res)
+        })
         .then(window.alert('File Uploaded'))
     }
 
@@ -114,7 +115,7 @@ check_session()
           fileDownload(finalResult, 'validatedFile.txt');
            })
            .catch(err=>{
-             console.log(err)
+             //console.log(err)
            })
        }
 
@@ -123,7 +124,7 @@ check_session()
      var dat = sessionStorage.getItem('token');
     if(dat==null){
             k = <div className="cnt">Please while the session is loading</div>
-                console.log(k)
+                //console.log(k)
            
         }
         else{
@@ -184,23 +185,23 @@ check_session()
               </div>
                   
             </div>]
-            console.log(k)
+            //console.log(k)
             
         }
     
     function check_session(){
        
-        console.log("dat")
-        console.log(dat)
-        console.log("compon")
-        console.log(compon)
+        //console.log("dat")
+        //console.log(dat)
+        //console.log("compon")
+        //console.log(compon)
         load_session(dat)
         
       
     }
     
     function load_session(fl){
-        console.log("Session loading fl:",fl)
+        //console.log("Session loading fl:",fl)
                     if(fl==null){
                       
                         setcompon(0)

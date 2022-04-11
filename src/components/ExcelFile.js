@@ -35,12 +35,12 @@ function ExcelFile() {
       }
       else{
         setExcelFileError('Please select only excel file types');
-        console.log(selectedFile.type);
+        //console.log(selectedFile.type);
         setExcelFile(null);
       }
     }
     else{
-      console.log('plz select your file');
+      //console.log('plz select your file');
     }
   }
   const handleSubmit=(e)=>{
@@ -60,10 +60,10 @@ function ExcelFile() {
       var parsedValue=Object.keys(header);
       setValueParsed(parsedValue);
       setExcelData(data);
-      console.log("Clicked")
+      //console.log("Clicked")
        axios.post("https://safe-basin-97450.herokuapp.com/validate/val",excelData)
-       .then(res=>console.log(res))
-       .catch(error=>console.log(error))
+       .then(res=>{//console.log(res)})
+       .catch(error=>{//console.log(error)})
     }
     else{
       setExcelData(null);

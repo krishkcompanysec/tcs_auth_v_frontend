@@ -21,7 +21,7 @@ export default function Signup(){
     }
     const handleSubmit=async (e)=>{
         e.preventDefault();
-        console.log("Submitting here")
+        //console.log("Submitting here")
         setErrors(Validation(values));
         
         
@@ -51,8 +51,8 @@ export default function Signup(){
                 pwd:values.pwd
               })
               .then(function (response) {
-                console.log(response);
-                console.log(response.status);
+                //console.log(response);
+                //console.log(response.status);
                 if(response.status===200){
                     setMessage(response.data)
                 }
@@ -61,16 +61,16 @@ export default function Signup(){
                
               })
               .catch(function (error) {
-                console.log("You have already submitted the request")
+                //console.log("You have already submitted the request")
     
                 setMessage("Already submitted request, fill up the whole form fields")
-                console.log(error);
+               // console.log(error);
               });
              
 
         }
             catch(err){
-                console.log(err)
+               // console.log(err)
             }
         
 

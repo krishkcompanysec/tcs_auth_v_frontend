@@ -13,11 +13,12 @@ function Loggedin(){
      let c =res.data
        
          setLst({data:c})
-     console.log(c)
+     //console.log(c)
      }
     
     return(
-        <div className="users" id="lgd" onClick={()=>console.log("Clicked")}>
+        <div className="users" id="lgd" onClick={()=>{//console.log("Clicked")
+    }}>
             <h1>Loggedin</h1>
             <br/>
             <h1>{stLst.data.length}</h1>

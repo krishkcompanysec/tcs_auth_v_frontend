@@ -21,11 +21,11 @@ function Admin(){
    
     let g=<Lst/>
     
-   if(state == 0){console.log("yep")
+   if(state == 0){//console.log("yep")
                             g=<Lst/>}else if(state==1){
-                                console.log("yep")
+                               // console.log("yep")
                                 g=<Seclst/>}
-                                    else if(state==2){console.log("yep")
+                                    else if(state==2){//console.log("yep")
                                          //g=<Thrlst/>
                                     g=<Thrlst/>}
                                     
@@ -41,7 +41,7 @@ function Admin(){
        else if(a == 2){
            setstate(2)
        }
-       console.log(flg)
+       //console.log(flg)
     
        
        
