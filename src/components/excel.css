@@ -1,0 +1,28 @@
+.form{
+  margin-top: 30px;
+    position: relative;
+}
+
+.viewer{
+  background-color: #e4e4e4;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.table-responsive{
+  height: 500px;
+}
+
+.container_excel{
+    
+}
+
+#lgout{
+    right: 100px;
+    top:5px;
+    position: fixed;
+}

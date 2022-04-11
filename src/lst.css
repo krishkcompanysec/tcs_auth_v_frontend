@@ -1,0 +1,74 @@
+.cell{
+    width: 300px;;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    border:0.08px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.idcell{
+    width: 500px;;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    border:0.08px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.sts_cell{
+    width: 100px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    border:0.08px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-top: 0px;
+    font-size: 20px;
+    
+}
+.sts_cell:hover{
+    cursor:pointer;
+    background-color: black;
+    color: white;
+}
+.dsts_cell{
+    width: 100px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    border:0.08px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-top: 0px;
+    font-size: 20px;
+    
+}
+.dsts_cell:hover{
+    cursor:pointer;
+    background-color: red;
+    color: white;
+}
+
+
+
+.tab{
+    display: flex;
+    align-self: center;
+    background-color: white;
+    margin: 0px;
+}
+
+.patab{
+   #background-color: rgba(0,255,255,0);
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+    align-self: center;
+    height: 500px;
+     overflow: scroll;
+}

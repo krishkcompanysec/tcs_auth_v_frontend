@@ -1,0 +1,27 @@
+.users{
+    width:400px;
+    height: 250px;
+    
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    margin: 60px 60px 60px 60px;
+    
+    align-self: center;
+}
+
+#usr{
+    #background-color: rgba(181,110,240,255);
+    background-image: linear-gradient(to right, #b56ef0 , #ceaaf1);
+}
+
+#apr{
+    #background-color: rgba(102,133,226,255);
+    background-image: linear-gradient(to right, #6593e0 , #7c7de9); 
+    
+}
+
+#lgd{
+    #background-color: rgba(254,180,135,255);
+    background-image: linear-gradient(to right, #feb487 , #fbd4bd); 
+}
