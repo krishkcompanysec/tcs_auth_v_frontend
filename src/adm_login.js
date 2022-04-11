@@ -95,7 +95,7 @@ function Adm_Login(){
     return(
    <>
     <div className={classes.container}>
-            <button onClick={()=>{
+            <button  style={{background: 'white',borderRadius: '10px',borderColor:'white'}} onClick={()=>{
         //console.log("Admin")
     }} id="adml">Admin</button>
        <center> <h1>Welcome to Auth-V</h1> </center>

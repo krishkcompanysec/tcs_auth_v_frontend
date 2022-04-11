@@ -51,7 +51,7 @@ function Login(){
     var dat = sessionStorage.getItem('token');
     
     useLayoutEffect(() => {
-    
+    //console.log("response")
 check_session()
 
 }, [])
@@ -126,7 +126,7 @@ check_session()
     return(
    <>
     <div className={classes.container}>
-            <button onClick={red} id="adml">Admin</button>
+            <button  style={{background: 'white',borderRadius: '10px',borderColor:"white"}} onClick={red} id="adml">Admin</button>
        <center> <h1>Welcome to Auth-V</h1> </center>
      <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="sm">

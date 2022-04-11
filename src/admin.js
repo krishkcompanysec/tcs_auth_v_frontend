@@ -11,6 +11,7 @@ function Admin(){
     useLayoutEffect(() => {
      
         let g=<Lst/>
+            check_session()
     },[])
     
     const navigate = useNavigate();
@@ -31,7 +32,8 @@ function Admin(){
                                     
      var con=<div>Please while the session is loading</div>                               
      var dat = sessionStorage.getItem('adm_token');
-        
+        //console.log("dat")
+        //console.log(dat)
    function tgl(a){
        if(a == 0){
            setstate(0)
@@ -67,13 +69,15 @@ function Admin(){
     
         
     function check_session(){
+       // console.log("chck")
       load_session(dat)
     }        
     
     function load_session(fl){
       if(fl==null){
         setcompon(0)  
-          gohome()
+          
+          setTimeout(gohome, 1000);
       }  else{
             setcompon(1)    
         }
