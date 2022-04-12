@@ -1,11 +1,12 @@
 .users{
-    width:400px;
+    width:20vw;
     height: 250px;
     
     border-radius: 15px;
     padding: 10px;
     color: white;
-    margin: 60px 60px 60px 60px;
+    #margin: 60px 60px 60px 60px;
+    margin: 0vw 1vw 1vw 0vw;
     
     align-self: center;
 }
@@ -13,6 +14,7 @@
 #usr{
     #background-color: rgba(181,110,240,255);
     background-image: linear-gradient(to right, #b56ef0 , #ceaaf1);
+    
 }
 
 #apr{

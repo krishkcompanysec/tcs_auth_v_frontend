@@ -3,7 +3,7 @@ import Signup from "./components/Signup";
 import ExcelValidator from "./components/ExcelValidator";
 import Admin from "./admin";
 import Admin_Login from "./adm_login";
-
+import "./apover.css";
 //................................//
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 //................................//
