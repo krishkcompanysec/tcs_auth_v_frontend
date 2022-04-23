@@ -109,10 +109,11 @@ check_session()
         e.preventDefault()
             axios.get(baseurl)
           .then((res) => {
-          var result=JSON.stringify(res.data)
+          //var result=JSON.stringify(res.data)
+          var result=res.data
           var finalResult=result.replaceAll('\\n','\n')
           var fileDownload = require('js-file-download');
-          fileDownload(finalResult, 'validatedFile.txt');
+          fileDownload(finalResult, 'validatedFile.csv');
            })
            .catch(err=>{
              //console.log(err)
