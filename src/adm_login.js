@@ -19,6 +19,9 @@ import excel from './assets/am.jpg';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import "./lg.css";
+import {useState} from 'react'
+import ReactLoading from 'react-loading';
+
 const useStyles=makeStyles({
   container:{
        backgroundImage:`url(${excel})`,
@@ -46,12 +49,16 @@ const useStyles=makeStyles({
 function Adm_Login(){
     const classes = useStyles();
     const navigate = useNavigate();
+    
+    const [spin,setspin] = useState(0)
+    
     async function spo(values){
         //console.log(values)
         await axios.post(`https://safe-basin-97450.herokuapp.com/admin/login`,values).then(function (response) {
                 //console.log(response);
                 //console.log(response.status);
                 if(response.status===200){
+                    setspin(0)
                     // console.log("sucess");
                     // console.log(response);
                     sessionStorage.removeItem('token');
@@ -61,6 +68,7 @@ function Adm_Login(){
               })
         .catch((error) => {//console.log(error.response.status)
                            if(error.response.status===400){
+                               setspin(0)
                                      //console.log("response");
                                      //console.log(error.response.data);
                                alert(error.response.data);
@@ -80,6 +88,7 @@ function Adm_Login(){
         }),
         onSubmit: values => {
          // alert(JSON.stringify(values));
+            setspin(1)
             spo(values)
         },
       });
@@ -178,6 +187,7 @@ function Adm_Login(){
     </ThemeProvider>
     </div>
     <center>    
+                    {spin?<ReactLoading type={"bars"} color={"blue"} height={50} width={50}/> : <div></div> }
       <h3>Click on below arrow to know more about how to use</h3>
       <button className={classes.button} type="button" onClick={handleClick}>
         {show ? <ArrowUpwardOutlinedIcon/>: <ArrowDownwardOutlinedIcon/>}

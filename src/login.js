@@ -1,5 +1,5 @@
 import React from "react";
-import {useLayoutEffect} from 'react'
+import {useLayoutEffect,useState} from 'react'
 import { makeStyles } from "@mui/styles";
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
@@ -20,6 +20,9 @@ import excel from './assets/excel.jpg';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import "./lg.css";
+
+import ReactLoading from 'react-loading';
+
 const useStyles=makeStyles({
   container:{
        backgroundImage:`url(${excel})`,
@@ -49,6 +52,8 @@ function Login(){
     const navigate = useNavigate();
     
     var dat = sessionStorage.getItem('token');
+    
+    const [spin,setspin] = useState(0)
     
     useLayoutEffect(() => {
     //console.log("response")
@@ -82,6 +87,7 @@ check_session()
               //  console.log(response);
                // console.log(response.status);
                 if(response.status===200){
+                    setspin(0)
                   //   console.log("sucess");
                   //   console.log(response);
                     sessionStorage.removeItem('adm_token')
@@ -92,6 +98,7 @@ check_session()
               })
         .catch((error) => {//console.log(error.response.status)
                            if(error.response.status===400){
+                               setspin(0)
                                      //console.log("response");
                                      //console.log(error.response.data);
                                alert(error.response.data);
@@ -111,6 +118,7 @@ check_session()
         }),
         onSubmit: values => {
          // alert(JSON.stringify(values));
+            setspin(1)
             spo(values)
         },
       });
@@ -204,7 +212,8 @@ check_session()
       </Container>
     </ThemeProvider>
     </div>
-    <center>    
+    <center> 
+            {spin?<ReactLoading type={"bars"} color={"green"} height={50} width={50}/> : <div></div> }
       <h3>Click on below arrow to know more about how to use</h3>
       <button className={classes.button} type="button" onClick={handleClick}>
         {show ? <ArrowUpwardOutlinedIcon/>: <ArrowDownwardOutlinedIcon/>}
