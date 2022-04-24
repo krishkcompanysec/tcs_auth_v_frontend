@@ -27,7 +27,27 @@ const navigate = useNavigate();
     var k=<div>Please while the session is loading</div>
     
     
+    const [chk,setchk]=useState([{"All":true},{"Architecture":false},{"Customer Services":false},{"Digital":false},{"Ergo Direct":false},{"Global Delivery":false},{"Group & Enterprise Systems":false},{"Health Systems":false},{"Infrastructure":false},{"P&C Systems":false},{"Sales & Distribution Systems":false},{"Supplier Management":false},{"Test & Methods":false}])
     
+        var clch = chk.map(e =><div><input type="checkbox" value={Object.keys(e)[0]} name="pan"  defaultChecked={Object.values(e)[0]} onChange={c=>handleOnChange(c)} />&nbsp;{Object.keys(e)[0]}&ensp;&ensp;</div>)
+
+
+function handleOnChange(v){
+        //console.log(v)
+        var a=v.target.value
+        var b=v.target.checked
+      //console.log(a)
+      //console.log(b)
+        setchk([...chk].map(o=>{if(Object.keys(o)[0] === a){
+            return{
+                ...o,[Object.keys(o)[0]]:b
+            }
+        }else return o
+        }))
+     //   console.log(chk)
+    }
+
+
     useLayoutEffect(() => {
     
 check_session()
@@ -107,10 +127,22 @@ check_session()
     //validation of excel data
     const handleValidate=(e)=>{
         e.preventDefault()
-            axios.get(baseurl)
+        /*    axios.get(baseurl)
           .then((res) => {
           //var result=JSON.stringify(res.data)
           var result=res.data
+          var finalResult=result.replaceAll('\\n','\n')
+          var fileDownload = require('js-file-download');
+          fileDownload(finalResult, 'validatedFile.csv');
+           })
+           .catch(err=>{
+             //console.log(err)
+           })*/
+          axios.post('https://safe-basin-97450.herokuapp.com/validate/valhds',chk)
+          .then((res) => {
+          //var result=//JSON.stringify(res.data)
+          var result=res.data
+          //console.log(result)
           var finalResult=result.replaceAll('\\n','\n')
           var fileDownload = require('js-file-download');
           fileDownload(finalResult, 'validatedFile.csv');
@@ -158,6 +190,16 @@ check_session()
 
               </div>
               <br></br>
+                    
+                    <div className="chk">
+                       
+                       
+                    {clch}
+                    </div>
+                    <br/>
+                  
+              <br/>
+                    
               <h5>File Name : {excelName}</h5>
               <hr></hr>
 
